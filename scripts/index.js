@@ -2,6 +2,18 @@ const port = `8080`
 const baseURL = `http://192.168.0.67:${port}`
 let responseText = document.getElementById('responseText')
 
+function checkConnection() {
+    fetch(`${baseURL}/api/v1/test`).then((response) => {
+        connectionSymbol.style.backgroundColor = 'Lime'
+        connectionText.innerHTML = "Succesfully Connected to API"
+    }).catch((err) => {
+        connectionSymbol.style.backgroundColor = 'Red'
+        connectionText.innerHTML = "Could not Connect to API"
+    })
+}
+
+checkConnection()
+
 async function startStop(button) {
     fetch(`${baseURL}/api/v1/startstop`).then(v => v.json()).then((response) => {
         responseText.innerHTML = response
@@ -10,7 +22,7 @@ async function startStop(button) {
     button.classList.toggle('activatedButton')
 }
 
-async function next(button){
+async function next(button) {
     fetch(`${baseURL}/api/v1/forwards`).then(v => v.json()).then((response) => {
         responseText.innerHTML = response
         console.log(response)
@@ -21,7 +33,7 @@ async function next(button){
     button.classList.toggle('activatedButton')
 }
 
-async function previous(button){
+async function previous(button) {
     fetch(`${baseURL}/api/v1/backwards`).then(v => v.json()).then((response) => {
         responseText.innerHTML = response
         console.log(response)
@@ -32,7 +44,7 @@ async function previous(button){
     button.classList.toggle('activatedButton')
 }
 
-async function reset(button){
+async function reset(button) {
     fetch(`${baseURL}/api/v1/reset`).then(v => v.json()).then((response) => {
         responseText.innerHTML = response
         console.log(response)
