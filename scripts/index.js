@@ -3,7 +3,7 @@ const baseURL = `http://192.168.0.67:${port}`
 let responseText = document.getElementById('responseText')
 
 function startStop() {
-    fetch(`${baseURL}/api/v1/startstop`).then((response) => {
+    fetch(`${baseURL}/api/v1/startstop`).then(v => v.json()).then((response) => {
         responseText.innerHTML = response.body
         console.log(response)
     })
