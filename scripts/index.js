@@ -1,5 +1,5 @@
 const port = `8080`
-const baseURL = `http://192.168.0.65:${port}`
+const baseURL = `http://192.168.0.67:${port}`
 
 function startStop() {
     fetch(`${baseURL}/api/v1/startstop`).then((response) => {
