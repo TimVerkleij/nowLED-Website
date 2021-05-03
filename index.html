@@ -10,18 +10,15 @@
 </head>
 
 <body>
-    <table>
-        <tr>
-            <td><button onclick="startStop()">Start/stop</button></td>
-            <td><button onclick="reset()">Reset</button></td>
-        </tr>
-            <td><button onclick="previous()">Backwards</button></td>
-            <td><button onclick="next()">Forwards</button></td>
-        <tr>
-        </tr>
-    </table>
-    <p id="responseText">Response will appear here!</p>
+    <div id="buttonDiv">
+        <button onclick="startStop()">Start/stop</button>
+        <button onclick="reset()">Reset</button>
+        <button onclick="previous()">Backwards</button>
+        <button onclick="next()">Forwards</button>
+        <p id="responseText">Response will appear here!</p>
+    </div>
 </body>
 <script src="scripts/index.js" defer></script>
+<script src="scripts/buttonStyle.js" defer></script>
 
 </html>
