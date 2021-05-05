@@ -2,6 +2,9 @@ const port = `8080`
 const baseURL = `http://192.168.0.210:${port}`
 let responseText = document.getElementById('responseText')
 
+
+
+
 function checkConnection() {
     fetch(`${baseURL}/api/v1/test`).then((response) => {
         connectionSymbol.style.backgroundColor = 'Lime'
@@ -52,13 +55,13 @@ async function reset(button) {
 
     startStopButton = document.getElementById('startStopButton')
 
-    if(startStopButton.classList.contains('activatedButton')) {
+    if (startStopButton.classList.contains('activatedButton')) {
         startStopButton.classList.toggle('activatedButton')
     }
-    
+
 }
 
-async function buttonAnimation(button){
+async function buttonAnimation(button) {
     button.classList.toggle('activatedButton')
     await sleep(600);
     button.classList.toggle('activatedButton')
