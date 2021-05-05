@@ -1,5 +1,5 @@
 const port = `8080`
-const baseURL = `http://192.168.0.67:${port}`
+const baseURL = `http://192.168.0.210:${port}`
 let responseText = document.getElementById('responseText')
 
 function checkConnection() {
