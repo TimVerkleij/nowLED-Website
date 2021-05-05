@@ -28,9 +28,8 @@ async function next(button) {
         console.log(response)
     })
 
-    button.classList.toggle('activatedButton')
-    await sleep(600);
-    button.classList.toggle('activatedButton')
+    buttonAnimation(button)
+
 }
 
 async function previous(button) {
@@ -39,9 +38,8 @@ async function previous(button) {
         console.log(response)
     })
 
-    button.classList.toggle('activatedButton')
-    await sleep(600);
-    button.classList.toggle('activatedButton')
+    buttonAnimation(button)
+
 }
 
 async function reset(button) {
@@ -50,6 +48,17 @@ async function reset(button) {
         console.log(response)
     })
 
+    buttonAnimation(button)
+
+    startStopButton = document.getElementById('startStopButton')
+
+    if(startStopButton.classList.contains('activatedButton')) {
+        startStopButton.classList.toggle('activatedButton')
+    }
+    
+}
+
+async function buttonAnimation(button){
     button.classList.toggle('activatedButton')
     await sleep(600);
     button.classList.toggle('activatedButton')
